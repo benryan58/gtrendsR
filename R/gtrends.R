@@ -251,8 +251,10 @@ gtrends.default <- function(query,
   query <- paste(query, collapse = ",")
   
   ## Change encoding to utf-8
-  query <- iconv(query, "latin1", "utf-8", sub = "byte")
-  
+  if (!(Encoding(query) == "UTF-8")) {
+    query <- iconv(query, "latin1", "utf-8", sub = "byte")
+  }
+
   data(countries, envir = environment())
   
   countries[, 1] <- as.character(countries[, 1])
