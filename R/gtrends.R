@@ -227,12 +227,12 @@ gtrends.default <- function(query,
   end_date <- as.Date(end_date, "%Y-%m-%d")  
   
   if (is.na(start_date)) {
-    stop("start_date is not a valide date. Please use yyyy-mm-dd format.",
+    stop("start_date is not a valid date. Please use yyyy-mm-dd format.",
          call. = FALSE)
   } 
   
   if (is.na(end_date)) {
-    stop("end_date is not a valide date. Please use yyyy-mm-dd format.",
+    stop("end_date is not a valid date. Please use yyyy-mm-dd format.",
          call. = FALSE)
   } 
   
@@ -290,7 +290,7 @@ gtrends.default <- function(query,
   
   resultsText <- getForm(trendsURL, .params = pp, curl = ch)
   
-  if (any(grep("QUOTA", resultsText))) {
+  if (any(grep("QUOTA", toupper(resultsText)))) {
   
     stop("Reached Google Trends quota limit! Please try again later.")
   
