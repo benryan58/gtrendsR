@@ -261,10 +261,10 @@ gtrends.default <- function(query,
   countries[, 2] <- as.character(countries[, 2])
   countries[which(countries[, "COUNTRY"] == "Namibia"), "CODE"] <- "NA"
   
-  if (geo != "" && !all(geo %in% countries[, "CODE"])) {
-    stop("Country code not valid. Please use 'data(countries)' to retreive valid codes.",
-         call. = FALSE)
-  }
+# if (geo != "" && !all(geo %in% countries[, "CODE"])) {
+#  stop("Country code not valid. Please use 'data(countries)' to retreive valid codes.",
+#         call. = FALSE)
+#  }
   
   # https://www.google.com/trends/trendsReport?&q=nhl&geo=US%2C%20BR&cmpt=geo&content=1&export=1
   
