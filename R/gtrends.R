@@ -204,8 +204,9 @@ gtrends.default <- function(query,
             is.vector(query),
             all(res %in% c("week", "day")),
             length(res) == 1,
-            length(query) <= 5, 
-            length(geo) <= 5)
+            length(query) <= 5#, 
+            #length(geo) <= 5
+            )
   
   if(length(query) > 1 & length(geo) > 1){
     stop("Can not specify multiple keywords and geo at the same time.", 
